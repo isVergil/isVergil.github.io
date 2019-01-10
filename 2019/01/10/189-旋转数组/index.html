@@ -5,18 +5,18 @@
   
   <title>189.旋转数组 | Bill&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###目标  给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  #####示例 1:  输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  #####示例 2:  输入: [-">
+  <meta name="description" content="目标 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  示例 1: 输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  ###示例 2:###  输入: [-1,-100,3,">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="189.旋转数组">
 <meta property="og:url" content="http://yoursite.com/2019/01/10/189-旋转数组/index.html">
 <meta property="og:site_name" content="Bill&#39;s Blog">
-<meta property="og:description" content="###目标  给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  #####示例 1:  输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  #####示例 2:  输入: [-">
+<meta property="og:description" content="目标 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  示例 1: 输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  ###示例 2:###  输入: [-1,-100,3,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T03:18:06.031Z">
+<meta property="og:updated_time" content="2019-01-10T03:40:50.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="189.旋转数组">
-<meta name="twitter:description" content="###目标  给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  #####示例 1:  输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  #####示例 2:  输入: [-">
+<meta name="twitter:description" content="目标 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。  示例 1: 输入: [1,2,3,4,5,6,7] 和 k = 3输出: [5,6,7,1,2,3,4]解释:向右旋转 1 步: [7,1,2,3,4,5,6]向右旋转 2 步: [6,7,1,2,3,4,5]向右旋转 3 步: [5,6,7,1,2,3,4]  ###示例 2:###  输入: [-1,-100,3,">
   
     <link rel="alternate" href="/atom.xml" title="Bill&#39;s Blog" type="application/atom+xml">
   
@@ -107,19 +107,17 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###目标</p>
-<blockquote>
+        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote>
 <p>给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</p>
 </blockquote>
-<p>#####示例 1:</p>
-<blockquote>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><blockquote>
 <p>输入: [1,2,3,4,5,6,7] 和 k = 3<br><br>输出: [5,6,7,1,2,3,4]<br><br><strong>解释:</strong><br><br>向右旋转 1 步: [7,1,2,3,4,5,6]<br><br>向右旋转 2 步: [6,7,1,2,3,4,5]<br><br>向右旋转 3 步: [5,6,7,1,2,3,4]</p>
 </blockquote>
-<p>#####示例 2:</p>
+<p>###示例 2:###</p>
 <blockquote>
 <p>输入: [-1,-100,3,99] 和 k = 2<br><br>输出: [3,99,-1,-100]<br><br><strong>解释:</strong><br><br>向右旋转 1 步: [99,-1,-100,3]<br><br>向右旋转 2 步: [3,99,-1,-100]<br><br></p>
 </blockquote>
-<p>###C语言实现</p>
+<p>###C语言实现###</p>
 <ul>
 <li><p><strong>常规思路</strong></p>
 <p>   数组依次向后移 <em>k</em> 次</p>
@@ -171,7 +169,7 @@ void reverse(int* nums, int first, int last){
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/10/189-旋转数组/" data-id="cjqq23wny0001uoi68ns91h6r" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/01/10/189-旋转数组/" data-id="cjqq2fjjr0002gwi6i5wz8ign" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -214,7 +212,7 @@ void reverse(int* nums, int first, int last){
 
   
   <div class="sidebar-module">
-    <h4>Categories</h4>
+    <h4>分类</h4>
     <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/算法/">算法</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
@@ -222,19 +220,10 @@ void reverse(int* nums, int first, int last){
 
   
   <div class="sidebar-module">
-    <h4>Tags</h4>
+    <h4>标签</h4>
     <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/leetcode/">leetcode</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
-
-
-  
-  <div class="sidebar-module">
-    <h4>Tag Cloud</h4>
-    <p class="tagcloud">
-      <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a>
-    </p>
-  </div>
 
 
   
