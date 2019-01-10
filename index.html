@@ -74,6 +74,116 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-189-旋转数组" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/10/189-旋转数组/">189.旋转数组</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/01/10/189-旋转数组/" class="article-date"><time datetime="2019-01-10T09:44:51.000Z" itemprop="datePublished">2019-01-10</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###目标</p>
+<blockquote>
+<p>给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</p>
+</blockquote>
+<p>#####示例 1:</p>
+<blockquote>
+<p>输入: [1,2,3,4,5,6,7] 和 k = 3<br><br>输出: [5,6,7,1,2,3,4]<br><br><strong>解释:</strong><br><br>向右旋转 1 步: [7,1,2,3,4,5,6]<br><br>向右旋转 2 步: [6,7,1,2,3,4,5]<br><br>向右旋转 3 步: [5,6,7,1,2,3,4]</p>
+</blockquote>
+<p>#####示例 2:</p>
+<blockquote>
+<p>输入: [-1,-100,3,99] 和 k = 2<br><br>输出: [3,99,-1,-100]<br><br><strong>解释:</strong><br><br>向右旋转 1 步: [99,-1,-100,3]<br><br>向右旋转 2 步: [3,99,-1,-100]<br><br></p>
+</blockquote>
+<p>###C语言实现</p>
+<ul>
+<li><p><strong>常规思路</strong></p>
+<p>   数组依次向后移 <em>k</em> 次</p>
+<pre><code>void rotate(int* nums, int numsSize, int k) {    
+    if(k==0)
+        return ;
+    k %= numsSize;
+    //k取余减少移动次数
+    int i=1;
+    while(i&lt;=k){
+        int temp=nums[numsSize-1];
+        for(int j=numsSize-1;j&gt;0;j--)
+            nums[j]=nums[j-1];
+        nums[0]=temp;
+        i++;
+    }
+}
+</code></pre><p>  <em>总结：</em> for 循环里每次交换都要翻转 n 次，总的翻转次数为 kn，时间复杂度为 o(kn) 。</p>
+</li>
+<li><p><strong>翻转数组</strong></p>
+<p>   1、先将数组整个翻转，即 <em>[n,n-1,n-2,…,3,2,1]</em> <br><br>   2、再将前 <em>k</em> 个元素翻转，即 <em>[n-k+1,n-k+2,…,n-1,n,n-k,n-k-1,…,3,2,1]</em> <br><br>   3、最后将后 <em>n-k+1</em> 个元素翻转，即 <em>[n-k+1,n-k+2,…,n-1,n,1,2,3,…,n-k-1,n-k]</em> <br></p>
+<pre><code>void rotate(int* nums, int numsSize, int k) {
+    if(k==0)
+        return ;
+    k %= numsSize;
+    reverse(nums,0,numsSize-1);
+    reverse(nums,0,k-1);
+    reverse(nums,k,numsSize-1);
+}
+//翻转函数
+void reverse(int* nums, int first, int last){
+    while(first&lt;last)
+    {
+        int temp=nums[first];
+        nums[first++]=nums[last];
+        nums[last--]=temp;
+    }
+}
+</code></pre><p>  <em>总结：</em> 调用三次翻转函数，第一次翻转 n/2 次，第二次 k/2 次，第三次 (n-1-k)/2 次，总共 n 次，时间复杂度为 o(n) 。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/10/189-旋转数组/" data-id="cjqq23wny0001uoi68ns91h6r" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-我的第二篇文章" class="article article-type-post" itemscope="" itemprop="blogPost">
 
   <header class="article-header">
@@ -110,7 +220,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/05/我的第二篇文章/" data-id="cjqi4759w00012gi6bdd7jihu" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/01/05/我的第二篇文章/" data-id="cjqq23wog0006uoi6b9hza7qt" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -160,7 +270,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/05/我的第一篇文章/" data-id="cjqi4759q00002gi6rkeqxmen" class="article-share-link">
+      <a data-url="http://yoursite.com/2019/01/05/我的第一篇文章/" data-id="cjqq23wo80003uoi62281f7nd" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -189,17 +299,34 @@
 
 
   
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/算法/">算法</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
 
 
   
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/leetcode/">leetcode</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
 
 
   
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a>
+    </p>
+  </div>
+
 
   
   <div class="sidebar-module">
     <h4>文章</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">2</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a><span class="sidebar-module-list-count">3</span></li></ul>
   </div>
 
 
@@ -208,6 +335,10 @@
   <div class="sidebar-module">
     <h4>最近</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/01/10/189-旋转数组/">189.旋转数组</a>
+        </li>
       
         <li>
           <a href="/2019/01/05/我的第二篇文章/">我的第二篇文章</a>
